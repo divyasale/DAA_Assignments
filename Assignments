@@ -1,0 +1,61 @@
+Towers of Hanoi
+public class TOH {
+ public static void main(String[] args) {
+ int N=4;
+ TowerOfHanoi(N,'A','C','B');
+ }
+ public static void TowerOfHanoi(int N, char from_rod, char to_rod, char help_rod){
+ //Base condition
+ if(N==0){
+ return;
+ }
+ TowerOfHanoi(N-1,from_rod,help_rod,to_rod);
+ System.out.println("Move Disk"+N+" From Rod "+ from_rod+" To Rod "+to_rod);
+ TowerOfHanoi(N-1,help_rod,to_rod,from_rod);
+ }
+}
+
+
+
+GCD of Given Two Numbers
+public class GCD_2 {
+ static int GCD(int a, int b){
+ if(b==0){
+ return a;
+ }
+ return GCD(b,a%b);
+ }
+ public static void main(String[] args) {
+ System.out.println("GCD is "+ GCD(98,56));
+ }
+}
+
+
+Factorial (Iterative)-
+public class Factorial {
+ public static void main(String[] args) {
+ int num = 5;
+ long factorial = 1;
+ for(int i = 1; i <= num; ++i)
+ {
+ // factorial = factorial * i;
+ factorial *= i;
+ }
+ System.out.printf("Factorial of %d = %d", num, factorial);
+ }
+}
+Factorial (Recursive)-
+public class Fact2 {
+ static int factorial(int n){
+ if(n==1){
+ return 1;
+ }
+ return n*factorial(n-1);
+ }
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ int num=sc.nextInt();
+ int Fact = factorial(num);
+ System.out.println("Factorial of number "+num+" is "+Fact);
+ }
+}
